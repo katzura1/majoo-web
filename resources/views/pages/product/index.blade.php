@@ -219,7 +219,7 @@
                             //empty data
                             $('#modal_data [name=id]').val('');
                             $('#modal_data [name=name]').val('');
-                            $('#modal_data [name=description]').val('');
+                            $('#modal_data [name=description]').summernote('code','');
                             $('#modal_data [name=price]').val('');
                             //show modal
                             $('#modal_data').modal();

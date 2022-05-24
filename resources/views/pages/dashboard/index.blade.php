@@ -23,7 +23,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Test Case Majoo</h3>
+                <h3 class="card-title">Product List</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -35,7 +35,32 @@
                 </div>
             </div>
             <div class="card-body">
-                Start creating your amazing application!
+                <div class="row">
+                    @foreach ($products as $item)
+                        <div class="col-sm-4">
+                            <div class="position-relative p-3 bg-white border" style="height: 180px">
+                                <div class="ribbon-wrapper ribbon-xl">
+                                    <div class="ribbon bg-secondary">
+                                    {{ $item['product_category']['name'] }}
+                                    </div>
+                                </div>
+                                    {{ $item['name'] }} <br>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <small>.
+                                            {{ substr(strip_tags($item['description']), 0, 150).'...' }}
+                                        </small>
+                                        <br><br>
+                                        <b>{{ 'Rp.'.number_format($item['price']) }}</b>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img src="{{ env('API_URL_PUBLIC').$item['image'] }}" style="height: 120px; width:150px" alt="Product Photo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
