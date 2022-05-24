@@ -8,5 +8,10 @@ class DashboadController extends Controller
 {
     public function index()
     {
+        $data = [
+            'title' => 'Dashboard',
+        ];
+
+        return view('pages.dashboard.index', $data);
     }
 }

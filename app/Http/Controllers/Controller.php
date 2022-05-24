@@ -31,6 +31,13 @@ class Controller extends BaseController
         ]);
     }
 
+    public function _post_multi_part($url, $data)
+    {
+        return $this->client->request('POST', $url, [
+            'multipart' => $data,
+        ]);
+    }
+
     public function _put($url, $data)
     {
         return $this->client->request('PUT', $url, [

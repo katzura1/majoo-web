@@ -35,8 +35,16 @@
                 </li>
                 <li class="nav-header">Master Data</li>
                 <li class="nav-item">
+                    <a href="{{ url('category_product') }}" class="nav-link">
+                        <i class="nav-icon fa-file"></i>
+                        <p>
+                            Category Product
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ url('ledger') }}" class="nav-link">
-                        <i class="nav-icon fa-toolbox"></i>
+                        <i class="nav-icon fa-file"></i>
                         <p>
                             Product
                         </p>

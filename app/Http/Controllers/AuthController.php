@@ -31,16 +31,13 @@ class AuthController extends Controller
                 'message' => $validator->errors()->first(),
             ];
         } else {
-            $url = env('API_URL') . 'api/login';
+            $url = env('API_URL') . 'login';
 
             try {
                 $res = $this->_post($url, $request->all());
                 $body = $res->getBody();
                 $response = json_decode($body, true);
-                dd($response);
                 if ($response['code'] == 200) {
-
-                    dd($response);
                     // Set session
                     $request->session()->put('ses_email', $response['data']['email']);
                     $request->session()->put('ses_name', $response['data']['name']);
@@ -52,7 +49,7 @@ class AuthController extends Controller
                 ];
             }
         }
-        return response()->json($response);
+        return response()->json($response, 200);
     }
 
     public function logout()

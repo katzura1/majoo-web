@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{{ asset('img/temans-icon.png') }}">
-    <title>SMART | {{ isset($title) ? $title : '' }}</title>
+    <link rel="shortcut icon" href="{{ asset('img/AdminLTELogo.png') }}">
+    <title>POS MINI | {{ isset($title) ? $title : '' }}</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
