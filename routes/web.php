@@ -15,7 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [AuthController::class, 'index']);
-Route::post('login', [AuthController::class, 'login'])->name('login');
+Route::group(['middleware' => ['check.login']], function () {
+    Route::get('/', [AuthController::class, 'index']);
+});
 
-Route::get('home', [DashboadController::class, 'index'])->name('home');
+Route::group(['middleware' => ['check.session']], function () {
+    Route::get('home', [DashboadController::class, 'index'])->name('home');
+});
+
+Route::group(['middleware' => ['check.ajax']], function () {
+    Route::post('login', [AuthController::class, 'login'])->name('login');;
+});
