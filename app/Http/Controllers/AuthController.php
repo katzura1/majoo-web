@@ -57,6 +57,6 @@ class AuthController extends Controller
         // Remove session
         session()->forget('ses_email');
         session()->forget('ses_name');
-        return redirect()->route('login');
+        return redirect()->route('login_page');
     }
 }

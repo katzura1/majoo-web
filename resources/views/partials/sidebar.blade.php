@@ -15,8 +15,8 @@
                 <img src="{{ asset('img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block"></a>
-                <span><small></small></span>
+                <a href="#" class="d-block">{{ session()->get('ses_name') }}</a>
+                <span><small>{{ session()->get('ses_email') }}</small></span>
             </div>
         </div>
 
@@ -35,10 +35,10 @@
                 </li>
                 <li class="nav-header">Master Data</li>
                 <li class="nav-item">
-                    <a href="{{ url('category_product') }}" class="nav-link">
+                    <a href="{{ url('product_category') }}" class="nav-link">
                         <i class="nav-icon fa-file"></i>
                         <p>
-                            Category Product
+                            Product Category
                         </p>
                     </a>
                 </li>

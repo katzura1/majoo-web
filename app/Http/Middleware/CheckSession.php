@@ -31,7 +31,7 @@ class CheckSession
                 return response()->json($response, 200);
             } else {
                 // $request->session()->put('redirect_url', $request->getRequestUri());
-                return redirect()->route('login');
+                return redirect()->route('login_page');
             }
             // return $next($request); //$next($request); //route('login');
         }
