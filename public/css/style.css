@@ -1,0 +1,100 @@
+div.dataTables_wrapper div.dataTables_filter {
+    float: right;
+}
+/*Hidden class for adding and removing*/
+.lds-dual-ring.hidden {
+    display: none;
+}
+
+/*Add an overlay to the entire page blocking any further presses to buttons or other elements.*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+/*Spinner Styles*/
+.lds-dual-ring {
+    display: inline-block;
+    /* width: 80px;
+        height: 80px; */
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 5% auto;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.pull-right {
+    float: right;
+}
+
+.select2-container {
+    width: 100% !important;
+}
+
+body,
+.btn,
+.form-control,
+button {
+    font-size: small !important;
+}
+
+.brand-text {
+    font-size: 1.25rem !important;
+}
+
+a.h1 {
+    font-size: 1.75rem !important;
+}
+
+.page-item.active .page-link {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #dc3545;
+    border-color: #6b6061;
+}
+
+.register-logo > a {
+    font-size: 26px;
+}
+
+.register-box {
+    width: 720px !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .register-box {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .register-box {
+        height: 100% !important;
+    }
+}
