@@ -25,6 +25,8 @@
 <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.js') }}"></script>
+<!-- Summernote -->
+<script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 <!-- SweetAlert2 -->
 <script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 <!-- Toastr -->
@@ -83,6 +85,13 @@
         }
     };
 
+    function stripHtml(html)
+    {
+        let tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || "";
+    }
+
     window.addEventListener('online',  updateOnlineStatus);
     window.addEventListener('offline', updateOnlineStatus);
 
@@ -123,36 +132,4 @@
         }
         return separateWord.join(' ');
     }
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        const newColorScheme = event.matches ? "dark" : "light";
-        if(newColorScheme == 'dark'){
-            console.log('dark');
-            $('body').addClass('dark-mode');
-            $('aside.main-sidebar').removeClass('sidebar-light-danger');
-            $('aside.main-sidebar').addClass('sidebar-dark-danger');
-            $('nav.main-header').removeClass('navbar-light');
-            $('nav.main-header').addClass('navbar-dark');
-        }else{
-            console.log('light');
-            $('body').removeClass('dark-mode');
-            $('aside.main-sidebar').removeClass('sidebar-dark-danger');
-            $('aside.main-sidebar').addClass('sidebar-light-danger');
-            $('nav.main-header').removeClass('navbar-dark');
-            $('nav.main-header').addClass('navbar-light');
-        }
-    });
-
-	$(document).ready(function () {
-        // switch dark mode / light mode
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            console.log('dark auto');
-            // dark mode
-            $('body').addClass('dark-mode');
-            $('aside.main-sidebar').removeClass('sidebar-light-danger');
-            $('aside.main-sidebar').addClass('sidebar-dark-danger');
-            $('nav.main-header').removeClass('navbar-light');
-            $('nav.main-header').addClass('navbar-dark');
-        }
-    })
 </script>

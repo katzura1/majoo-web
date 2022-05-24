@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('ledger') }}" class="nav-link">
+                    <a href="{{ url('product') }}" class="nav-link">
                         <i class="nav-icon fa-file"></i>
                         <p>
                             Product
